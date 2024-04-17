@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Student Survey Form</title>
+<style>
+  /* Styles for form layout */
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0; /* Unique background color */
+  }
+  header {
+    background-color: #076837; /* Header background color */
+    color: #f3ad14;
+    text-align: center;
+    padding: 10px 0;
+    font-size: 24px;
+  }
+  form {
+    max-width: 900px;
+    margin: 20px auto; /* Added margin for better appearance */
+    background-color: #fff; /* Unique background color */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Added box shadow for depth */
+  }
+  label {
+    display: inline-block; /* Change to inline-block */
+    margin-bottom: 5px;
+    color: #333; /* Unique text color */
+  }
+  input[type="text"],
+  input[type="email"],
+  select,
+  textarea {
+    width: 70%;
+    padding: 8px;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+    border: 1px solid #ccc; /* Added border for inputs */
+    border-radius: 4px;
+  }
+  textarea {
+    resize: vertical;
+    min-height: 100px;
+    width: 100%; /* Adjust width for full width */
+  }
+  input[type="submit"]{
+    background-color: #076837 ;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-right: 10px;
+  }
+  input[type="reset"] {
+    background-color: #e6361f;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-right: 10px;
+  }
+  input[type="submit"]:hover
+  {
+    background-color: #02512a;
+  }
+  input[type="reset"]:hover {
+    background-color: #c01919;
+  }
+  .form-group {
+    margin-bottom: 15px;
+  }
+  .form-group.inline {
+    display: inline-block; /* Adjust display for inline */
+    vertical-align: top; /* Align top for inline */
+  }
+  .form-group.textarea {
+    display: block; /* Set to block for textarea */
+  }
+</style>
+</head>
+<body>
+<header>Student Survey Form</header>
+<form id="surveyForm">
+  <div class="form-group">
+    <label for="firstName">First Name *</label>
+    <input type="text" id="firstName" name="firstName" required>
+  </div>
+
+  <div class="form-group">
+    <label for="lastName">Last Name *</label>
+    <input type="text" id="lastName" name="lastName" required>
+  </div>
+
+  <div class="form-group">
+    <label for="streetAddress">Street Address *</label>
+    <input type="text" id="streetAddress" name="streetAddress" required>
+  </div>
+
+  <div class="form-group">
+    <label for="city">City *</label>
+    <input type="text" id="city" name="city" required>
+  </div>
+
+  <div class="form-group">
+    <label for="state">State *</label>
+    <input type="text" id="state" name="state" required>
+  </div>
+
+  <div class="form-group">
+    <label for="zip">Zip *</label>
+    <input type="text" id="zip" name="zip" required>
+  </div>
+
+  <div class="form-group">
+    <label for="telephone">Telephone Number *</label>
+    <input type="tel" id="telephone" name="telephone" required>
+  </div>
+
+  <div class="form-group">
+    <label for="email">E-mail *</label>
+    <input type="email" id="email" name="email" required>
+  </div>
+
+  <div class="form-group">
+    <label for="date">Date of Survey *</label>
+    <input type="date" id="date" name="date" required>
+  </div>
+
+  <div class="form-group inline"> <!-- Adjust display for inline -->
+    <label>What did you like most about the campus? </label>
+    <input type="checkbox" id="likeStudents" name="likes" value="students">
+    <label for="likeStudents">Students</label>
+    <input type="checkbox" id="likeLocation" name="likes" value="location">
+    <label for="likeLocation">Location</label>
+    <input type="checkbox" id="likeCampus" name="likes" value="campus">
+    <label for="likeCampus">Campus</label>
+    <input type="checkbox" id="likeAtmosphere" name="likes" value="atmosphere">
+    <label for="likeAtmosphere">Atmosphere</label>
+    <input type="checkbox" id="likeDormRooms" name="likes" value="dormRooms">
+    <label for="likeDormRooms">Dorm Rooms</label>
+    <input type="checkbox" id="likeSports" name="likes" value="sports">
+    <label for="likeSports">Sports</label>
+  </div>
+
+  <div class="form-group inline"> <!-- Adjust display for inline -->
+    <label for="interest">How did you become interested in the university? </label>
+    <input type="radio" id="interestFriends" name="interest" value="friends" >
+    <label for="interestFriends">Friends</label>
+    <input type="radio" id="interestTelevision" name="interest" value="television">
+    <label for="interestTelevision">Television</label>
+    <input type="radio" id="interestInternet" name="interest" value="internet">
+    <label for="interestInternet">Internet</label>
+    <input type="radio" id="interestOther" name="interest" value="other">
+    <label for="interestOther">Other</label>
+  </div>
+
+  <div class="form-group">
+    <label for="recommend">Likelihood of recommending this school to other prospective students </label>
+    <select id="recommend" name="recommend" >
+      <option value="">Select</option>
+      <option value="veryLikely">Very Likely</option>
+      <option value="likely">Likely</option>
+      <option value="unlikely">Unlikely</option>
+    </select>
+  </div>
+
+  <div class="form-group">
+    <label for="raffle">Raffle (Enter at least ten comma separated numbers ranging from 1 through 100) </label>
+    <input type="text" id="raffle" name="raffle" >
+  </div>
+
+  <div class="form-group textarea"> <!-- Adjust display for textarea -->
+    <label for="comments">Additional Comments</label>
+    <textarea id="comments" name="comments"></textarea>
+  </div>
+
+  <div class="form-group">
+    <input type="submit" value="Submit">
+    <input type="reset" value="Cancel">
+  </div>
+</form>
+
+<script>
+  document.getElementById('surveyForm').addEventListener('submit', function(event) {
+    event.preventDefault();
+  
+  });
+</script>
+</body>
+</html>
